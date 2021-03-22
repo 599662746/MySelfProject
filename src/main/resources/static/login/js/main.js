@@ -11,6 +11,7 @@ $.ajax({
 })
 $("#loginBtn").click(function loginBtn(){
   var flag=inputDataVerifyNull(["userName","password"]);
+  $("#password").val(encode64($("#password").val()))
   $("#cip").val(cip)
   if (flag){
     $("#loginForm").submit();
