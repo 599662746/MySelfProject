@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en_US" xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>login</title>
 <!-- Meta tag Keywords -->
@@ -22,7 +22,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <body>
 <!--header-->
 	<div class="header-w3l">
-		<h1>Talking is cheap,show me the code!</h1>
+		<h1 th:text="#{login.head}">Talking is cheap,show me the code!</h1>
 	</div>
 <!--//header-->
 
@@ -30,22 +30,22 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <div id="app" class="main-content-agile">
 	<div class="sub-main-w3">	
 		<div class="wthree-pro">
-			<h2 style="color: red;display: inline;">while</h2><h2 style="display: inline">(</h2><h2 style="color: green;display: inline;">true</h2><h2 style="display: inline">){</h2><h2>
-			<h2 style="margin-top: -8%">eat();</h2>
-			<h2 style="margin-top: -8%">code();</h2>
-			<h2 style="margin-top: -8%">sleep();</h2>
+			<h2 style="color: red;display: inline;" th:text="#{login.while}">while</h2><h2 style="display: inline">(</h2><h2 style="color: green;display: inline;" th:text="#{login.true}">true</h2><h2 style="display: inline">){</h2><h2>
+			<h2 style="margin-top: -8%" th:text="#{login.eat}">eat();</h2>
+			<h2 style="margin-top: -8%" th:text="#{login.code}">code();</h2>
+			<h2 style="margin-top: -8%" th:text="#{login.sleep}">sleep();</h2>
 			<h2 style="margin-top: -8%;margin-left: -28%">}</h2></h2>
 		</div>
 		<form id="loginForm" action="/userLogin" method="post">
 		<span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span><br><br>
-			<input placeholder="Username" id="userName" name="userName" autocomplete="off" class="inputText" type="text" required="">
+			<input th:placeholder="#{login.Username}" id="userName" name="userName" autocomplete="off" class="inputText" type="text" required="">
 			<input  type="text" name="cip" id="cip" style="display: none">
-			<input  placeholder="Password" id="password" name="password" class="inputText" type="password" required="">
+			<input  th:placeholder="#{login.Password}" id="password" name="password" class="inputText" type="password" required="">
 			<span class="icon2"><i class="fa fa-unlock" aria-hidden="true"></i></span><br>
 			<div class="sub-w3l">
-				<span><input type="checkbox" />记住密码</span>
+				<span><input type="checkbox" />[[#{login.remPwd}]]</span>
 				<div class="right-w3l">
-					<input id="loginBtn"  type="button" value="登录">
+					<input id="loginBtn"  type="button" th:value="#{login.signin}">
 				</div>
 			</div>
 		</form>
@@ -54,10 +54,13 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--//main-->
 
 <!--footer-->
-<div class="footer" style="margin-top: 190px">
-	<p>&copy; 2020-3-21 登录页面 lx</p>
+<div class="footer" style="margin-top: 145px">
+	<p>&copy; 2020-3-21 [[#{login.loginhtml}]] lx</p>
+	<br>
+	<p><a th:href="@{/login(l='en_US')}">English </a>|<a th:href="@{/login(l='zn_CN')}"> 中文</a></p>
 </div>
 <!--//footer-->
+<h2 id="canNotNull" th:text="#{login.canNotNull}"></h2>
 <script type="text/javascript" th:src="@{/webjars/jquery/3.6.0/jquery.js}"></script>
 <script src="http://pv.sohu.com/cityjson"></script>
 <script type="text/javascript" th:src="@{/Tool.js}"></script>

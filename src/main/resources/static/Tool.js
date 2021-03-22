@@ -21,7 +21,7 @@ function inputDataVerifyNull(id){
 function changePlaceholder(id){
   if (!$("#"+id).val()){
     //change placeholder text
-    $("#"+id).attr("placeholder","Do not empty")
+    $("#"+id).attr("placeholder",$("#canNotNull").text())
     //change placeholder color
     $("#"+id).addClass('inputText change')
     return false

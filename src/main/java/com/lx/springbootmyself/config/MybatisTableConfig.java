@@ -6,11 +6,13 @@ import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import com.alibaba.druid.pool.DruidDataSource;
 @Configuration
+@PropertySource(value = {"classpath:jdbc.properties"})
 @ComponentScan(basePackages = {"com.gitee.sunchenbin.mybatis.actable.manager.*"})
 public class MybatisTableConfig {
     @Value("${spring.datasource.driver-class-name}")

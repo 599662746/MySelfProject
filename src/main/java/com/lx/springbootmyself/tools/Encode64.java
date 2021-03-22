@@ -2,6 +2,9 @@ package com.lx.springbootmyself.tools;
 
 import java.io.ByteArrayOutputStream;
 
+/**
+ * 对加密过的进行解密
+ */
 public class Encode64 {
     private static char[] base64EncodeChars = new char[] { 'A', 'B', 'C', 'D',
             'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
@@ -73,6 +76,11 @@ public class Encode64 {
         return buf.toByteArray();
     }
 
+    /**
+     * 传入字符串进行解密
+     * @param args
+     * @return
+     */
     public static String getEncode64(String args) {
         return new String(decode(args));
     }
