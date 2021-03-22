@@ -16,8 +16,11 @@
         <result column="state" jdbcType="INTEGER" property="state" />
         <result column="profile_photo" jdbcType="VARCHAR" property="profilePhoto" />
     </resultMap>
-    <select id="userLogin" resultType="int">
-        select * from sys_user where user_name = #{name} and password = #{password}
+    <select id="userLogin" resultMap="BaseResultMap">
+        select * from sys_user where user_name = #{name} and password = #{password} and state =1
     </select>
+    <update id="updateLastTimeAndIp">
+        update sys_user set login_time = #{date} , last_ip = #{cip} where id = #{id}
+    </update>
 
 </mapper>

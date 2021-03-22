@@ -8,5 +8,5 @@ import java.util.List;
 
 @Resource
 public interface SysUserService {
-    public List<SysUser> userLogin(String name, String password);
+    public boolean userLogin(String name, String password,String cip);
 }

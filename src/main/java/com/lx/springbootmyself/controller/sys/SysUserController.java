@@ -15,7 +15,10 @@ public class SysUserController {
     @RequestMapping("/userLogin")
     public Object userLogin(SysUser user,String cip){
         //cip user IP and address
-        List<SysUser> flag=SysUserServiceImp.userLogin(user.getUserName(),user.getPassword());
+        if (cip.isEmpty()){
+            cip="数据异常，暂未获取到";
+        }
+        boolean flag=SysUserServiceImp.userLogin(user.getUserName(),user.getPassword(),cip);
         System.out.println(flag);
         return "login";
     }
