@@ -1,0 +1,4 @@
+/*change placeholder color*/
+.inputText.change::-webkit-input-placeholder {
+    color: red;
+}

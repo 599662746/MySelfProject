@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lx.springbootmyself.mapper.sys.SysUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.lx.springbootmyself.pojo.sys.SysUser">
+        <result column="id" javaType="String" jdbcType="VARCHAR" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="sex" jdbcType="VARCHAR" property="sex" />
+        <result column="is_admin" jdbcType="INTEGER" property="isAdmin" />
+        <result column="login_time" jdbcType="TIMESTAMP" property="loginTime" />
+        <result column="sign_in_time" jdbcType="TIMESTAMP" property="signInTime" />
+        <result column="last_ip" jdbcType="TIMESTAMP" property="lastIp" />
+        <result column="state" jdbcType="INTEGER" property="state" />
+        <result column="profile_photo" jdbcType="VARCHAR" property="profilePhoto" />
+    </resultMap>
+    <select id="userLogin" resultType="int">
+        select * from sys_user where user_name = #{name} and password = #{password}
+    </select>
+
+</mapper>

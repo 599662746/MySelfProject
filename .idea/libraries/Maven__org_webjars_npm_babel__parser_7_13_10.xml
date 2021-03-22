@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.webjars.npm:babel__parser:7.13.10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Tools/apache-maven-3.6.3/repository/org/webjars/npm/babel__parser/7.13.10/babel__parser-7.13.10.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../Tools/apache-maven-3.6.3/repository/org/webjars/npm/babel__parser/7.13.10/babel__parser-7.13.10-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../Tools/apache-maven-3.6.3/repository/org/webjars/npm/babel__parser/7.13.10/babel__parser-7.13.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
